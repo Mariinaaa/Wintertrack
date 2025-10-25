@@ -1,10 +1,10 @@
 # Contexto del proyecto: WinterTrack
 
-WinterTrack es una estación de esquí que busca la digitalización integral de su gestión, con un enfoque en la mejora de la experiencia del cliente y la optimización de los recursos operativos mediante sensores IoT.
+WinterTrack es una empresa especializada en la digitalización integral de estaciones de esquí, con un enfoque en la mejora de la experiencia del cliente y la optimización de los recursos operativos mediante sensores IoT.
 
 ## 1. Actividad principal
 
-WinterTrack opera una estación de esquí centrada en los deportes de invierno. Sus actividades clave incluyen:
+WinterTrack trabaja para estaciones de esquí y centros de deportes de invierno. Sus actividades clave incluyen:
 
 * **Operación y Seguridad:** Mantenimiento y gestión segura de las pistas de esquí y de toda la infraestructura de transporte (telesillas, telecabinas, cintas).
 * **Servicios al Cliente:** Venta de forfaits, alquiler de material, escuela de esquí y gestión de servicios de restauración.
@@ -14,7 +14,7 @@ WinterTrack opera una estación de esquí centrada en los deportes de invierno. 
 
 ## 2. Sistemas de Información existentes
 
-Actualmente, los sistemas de WinterTrack operan como segmentación de datos, lo que impide una visión entera del negocio:
+Actualmente, los sistemas de la estación de esquí operan como segmentación de datos, lo que impide una visión entera del negocio:
 
 ### A. Sistemas de negocio
 
