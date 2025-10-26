@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "LecturaSensor",
+    "description": "Captura una medición en tiempo real de cualquier sensor IoT de la estación.",
+    "type": "object",
+    "properties": {
+        "lecturaId": { "type": "string", "description": "Identificador único de la medición." },
+        "remonteId": { "type": "string", "description": "ID de la infraestructura asociada, si aplica (Relación)." },
+        "fechaHora": { "type": "string", "format": "date-time", "description": "Marca de tiempo de la medición (ISO 8601)." },
+        "tipoSensor": { "type": "string", "enum": ["Vibracion", "TemperaturaNieve", "Aforo", "VelocidadViento"], "description": "Tipo de sensor que generó el dato." },
+        "valorMedido": { "type": "number", "description": "El valor numérico de la medición (ej. 1.25, 0.8)." }
+    },
+    "required": ["lecturaId", "fechaHora", "tipoSensor", "valorMedido"]
+}
