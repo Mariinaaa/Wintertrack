@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Remonte",
+    "description": "Define la infraestructura física de un remonte, contextualizando los datos operacionales.",
+    "type": "object",
+    "properties": {
+        "remonteId": { "type": "string", "description": "Identificador único de la instalación (ej. TSL05)." },
+        "nombre": { "type": "string", "description": "Nombre comercial del remonte." },
+        "tipo": { "type": "string", "enum": ["Telesilla", "Telecabina", "Cinta Transportadora"], "description": "Tipo de remonte." },
+        "ubicacionGPS": { "type": "string", "description": "Coordenadas GPS de la base (Lat, Lon)." },
+        "estadoOperacional": { "type": "string", "enum": ["Abierto", "Cerrado por Viento", "Mantenimiento"], "description": "Estado actual de la instalación." }
+    },
+    "required": ["remonteId", "nombre", "tipo", "estadoOperacional"]
+}
