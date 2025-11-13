@@ -1,0 +1,30 @@
+[
+    {
+        "id": "LEC-AF-001",
+        "sensorId": "REM-TS01",
+        "valor": 150,
+        "unidad": "personas",
+        "timestamp": "2025-10-16T10:00:00Z"
+    },
+    {
+        "id": "LEC-VIB-001",
+        "sensorId": "REM-TC02",
+        "valor": 0.5,
+        "unidad": "mm/s",
+        "timestamp": "2025-10-16T10:01:00Z"
+    },
+    {
+        "id": "LEC-TEMP-001",
+        "sensorId": "REM-TS01-TEMP",
+        "valor": -2.5,
+        "unidad": "°C",
+        "timestamp": "2025-10-16T10:02:00Z"
+    },
+    {
+        "id": "LEC-AF-002",
+        "sensorId": "REM-TS01",
+        "valor": 155,
+        "unidad": "personas",
+        "timestamp": "2025-10-16T10:05:00Z"
+    }
+]
