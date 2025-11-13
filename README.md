@@ -1,0 +1,57 @@
+# Microservicios del Proyecto – Tema 2: Integración de Aplicaciones
+
+Este documento describe dos microservicios del proyecto: un **CRM Mini** y un **servicio de IoT WinterTrack**.  
+
+## 1. Servicio CRM Mini (Node.js + Express)
+
+### Descripción general
+Este microservicio simula un sistema **CRM (Customer Relationship Management)**.  
+Proporciona datos estáticos de **clientes** y opcionalmente de **pedidos**, almacenados en ficheros JSON.  
+
+### Requisitos previos
+- Node.js v18 o superior  
+- npm  
+- Visual Studio Code 
+
+### Instalación
+cd services/crm
+npm install
+npm start
+
+### Ejecución
+Para iniciar el servicio, ejecuta: npm start
+El servidor quedará disponible en http://localhost:3000
+
+## 2. Servicio de IoT – WinterTrack (Python + FastAPI)
+
+### Descripción general
+Este microservicio expone datos de sensores y lecturas de la estación de esquí.
+
+### Requisitos previos
+Python 3.10 o superior
+Entorno virtual recomendado
+
+### Instalación
+- Activar entorno virtual
+    .venv\Scripts\activate.bat
+
+- Instalar dependencias
+    pip install -r requirements.txt
+
+### Ejecución
+Para iniciar el servidor en modo desarrollo:
+uvicorn main:app --reload --port 8002
+El servicio quedará disponible en http://localhost:8002.
+
+## 3. Comprobaciones
+crm:
+- clientes: http://127.0.0.1:8000/lecturas
+    Si quieres ver los 50 clientes y no solo los 25 primeros: http://localhost:3001/clientes?pageSize=50
+    Si quieres flitar por nombre: http://localhost:3001/clientes?q= nombre del cliente que queramos buscar
+- pedidos: http://localhost:3001/pedidos
+    Si quieres filtrar por id del cliente al que esta vinculado el pedido: http://localhost:3001/pedidos?clienteId= número de id del cliente por el que queramos filtrar
+
+iot:
+- lecturas: http://127.0.0.1:8000/lecturas
+- sensores: http://127.0.0.1:8000/sensores
+
