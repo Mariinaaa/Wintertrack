@@ -17,6 +17,7 @@ def load_data(filepath: str):
 sensores_data = load_data('data/sensores.json')
 lecturas_data = load_data('data/lecturas.json')
 lectura_schema = load_data('../../schemas/lectura.schema.json')
+sensor_schema = load_data('../../schemas/sensor.schema.json')
 
 # Función de validación reutilizable
 
@@ -29,9 +30,19 @@ def validate_reading(reading_obj):
         raise HTTPException(status_code=500, detail={
                             "error": "Los datos no cumplen el schema definido"})
 
+def validate_sensor(sensor_obj):
+    try:
+        validate(instance=sensor_obj, schema=sensor_schema)
+    except ValidationError:
+        raise HTTPException(status_code=500, detail={
+            "error": "Los datos del sensor no cumplen el schema definido"
+        })
+
 
 @app.get("/sensores")
 def get_sensores():
+    for sensor in sensores_data:
+        validate_sensor(sensor)
     return sensores_data
 
 
