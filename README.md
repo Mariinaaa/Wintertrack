@@ -15,11 +15,14 @@ Proporciona datos estáticos de **clientes** y opcionalmente de **pedidos**, alm
 
 ### Instalación
 cd services/crm
+
 npm install
+
 npm start
 
 ### Ejecución
 Para iniciar el servicio, ejecuta: npm start
+
 El servidor quedará disponible en http://localhost:3000
 
 ## 2. Servicio de IoT – WinterTrack (Python + FastAPI)
@@ -32,24 +35,26 @@ Python 3.10 o superior
 Entorno virtual recomendado
 
 ### Instalación
-- Activar entorno virtual
+- Activar entorno virtual: 
     .venv\Scripts\activate.bat
 
-- Instalar dependencias
+- Instalar dependencias: 
     pip install -r requirements.txt
 
 ### Ejecución
 Para iniciar el servidor en modo desarrollo:
+
 uvicorn main:app --reload --port 8002
+
 El servicio quedará disponible en http://localhost:8002.
 
-## 3. Comprobaciones
+## 3. EJemplos de comprobaciones
 crm:
 - clientes: http://127.0.0.1:8000/lecturas
-    Si quieres ver los 50 clientes y no solo los 25 primeros: http://localhost:3001/clientes?pageSize=50
-    Si quieres flitar por nombre: http://localhost:3001/clientes?q= nombre del cliente que queramos buscar
+    - Si quieres ver los 50 clientes y no solo los 25 primeros: http://localhost:3001/clientes?pageSize=50
+    - Si quieres flitar por nombre: http://localhost:3001/clientes?q=nombre_del_cliente_que_queramos_buscar
 - pedidos: http://localhost:3001/pedidos
-    Si quieres filtrar por id del cliente al que esta vinculado el pedido: http://localhost:3001/pedidos?clienteId= número de id del cliente por el que queramos filtrar
+    - Si quieres filtrar por id del cliente al que esta vinculado el pedido: http://localhost:3001/pedidos?clienteId=número_de_id_del_cliente_por_el_que_queramos_filtrar
 
 iot:
 - lecturas: http://127.0.0.1:8000/lecturas
