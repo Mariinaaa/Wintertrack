@@ -21,7 +21,7 @@ npm install
 npm start
 
 ### Ejecución
-Para iniciar el servicio, ejecuta: npm start
+Para iniciar el servicio, se ejecuta con npm start
 
 El servidor quedará disponible en http://localhost:3000
 
@@ -32,7 +32,7 @@ Este microservicio expone datos de sensores y lecturas de la estación de esquí
 
 ### Requisitos previos
 Python 3.10 o superior
-Entorno virtual recomendado
+Entorno virtual
 
 ### Instalación
 - Activar entorno virtual: 
@@ -48,7 +48,7 @@ uvicorn main:app --reload --port 8002
 
 El servicio quedará disponible en http://localhost:8002.
 
-## 3. EJemplos de comprobaciones
+## 3. Ejemplos de comprobaciones
 crm:
 - clientes: http://127.0.0.1:8000/lecturas
     - Para ver los 50 clientes y no solo los 25 primeros: http://localhost:3001/clientes?pageSize=50
