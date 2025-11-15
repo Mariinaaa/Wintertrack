@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pedido.schema.json",
+  "title": "Pedido",
+  "type": "object",
+  "properties": {
+    "pedidoId": { "type": "string" },
+    "clienteId": { "type": "string" },
+    "fechaPedido": { "type": "string", "format": "date-time" },
+    "totalMonto": { "type": "number" },
+    "estado": { "type": "string" }
+  },
+  "required": ["pedidoId", "clienteId", "fechaPedido", "totalMonto", "estado"],
+  "additionalProperties": false
+}
+
