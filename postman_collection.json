@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "f6e1112d-e23d-4a1d-8ea7-698f7f9acee8",
+		"name": "postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48334929",
+		"_collection_link": "https://amaya-marina2004-9685346.postman.co/workspace/Marina-Amaya's-Workspace~3ce38917-119f-46b7-8099-0622b0f1371f/collection/48334929-f6e1112d-e23d-4a1d-8ea7-698f7f9acee8?action=share&source=collection_link&creator=48334929"
+	},
+	"item": [
+		{
+			"name": "crm",
+			"item": [
+				{
+					"name": "GET /clientes",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET /clientes/:id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET /pedidos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET /pedidos/:id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET /clientes/:id - error 404",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"description": "Colección para probar los endpoints del microservicio crm"
+		},
+		{
+			"name": "iot",
+			"item": [
+				{
+					"name": "GET /sensores",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET /lecturas",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET /lecturas (con filtros)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET /lecturas (error de fecha)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"description": "Colección para probar los endpoints del microservicio IoT (FastAPI)"
+		}
+	]
+}
