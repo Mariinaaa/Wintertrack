@@ -22,7 +22,8 @@ function buildClienteEnriquecido(cliente, pedidosCliente, sensoresUbicacion, lec
                 .map(l => ({
                     id: l.id,
                     valor: l.valor,
-                    unidad: l.unidad,
+                    // Limpiar caracteres extraños en unidades
+                    unidad: l.unidad.replace("Â", ""),
                     timestamp: l.timestamp
                 }))
         }))
@@ -33,22 +34,18 @@ function buildClienteEnriquecido(cliente, pedidosCliente, sensoresUbicacion, lec
    ===============   DETALLE CLIENTES   ====================
    ======================================================== */
 async function getClientesDetalle(req, res) {
-    // CRM → Clientes
     const clientesResp = await fetchJson(`${CRM_BASE}/clientes?page=1&pageSize=200`);
     if (!clientesResp.ok)
         return res.status(503).json({ error: "CRM no disponible (clientes)", detalles: clientesResp.error });
 
-    // CRM → Pedidos
     const pedidosResp = await fetchJson(`${CRM_BASE}/pedidos?page=1&pageSize=500`);
     if (!pedidosResp.ok)
         return res.status(503).json({ error: "CRM no disponible (pedidos)", detalles: pedidosResp.error });
 
-    // IoT → Sensores
     const sensoresResp = await fetchJson(`${IOT_BASE}/sensores`);
     if (!sensoresResp.ok)
         return res.status(503).json({ error: "IoT no disponible (sensores)", detalles: sensoresResp.error });
 
-    // IoT → Lecturas
     const lecturasResp = await fetchJson(`${IOT_BASE}/lecturas`);
     if (!lecturasResp.ok)
         return res.status(503).json({ error: "IoT no disponible (lecturas)", detalles: lecturasResp.error });
@@ -98,7 +95,7 @@ async function getClientesDetalle(req, res) {
 }
 
 /* ========================================================
-   ===================== RESUMEN ===========================
+   ===================== RESUMEN ==========================
    ======================================================== */
 async function getResumen(req, res) {
     const clientesResp = await fetchJson(`${CRM_BASE}/clientes?page=1&pageSize=200`);
