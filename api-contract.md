@@ -1,17 +1,17 @@
 # API Unificada: Integración de CRM e IoT
 
-Este documento describe los contratos y endpoints del **servicio API Unificada**, que actúa como capa de integración entre los sistemas **CRM** e **IoT** simulados.
+Este documento describe los contratos y endpoints del servicio API Unificada, que actúa como capa de integración entre los sistemas CRM e IoT simulados.
 
 ---
 
 ## 1. Descripción general
 
-La **API Unificada** centraliza el acceso a los datos de clientes, sensores y lecturas, obteniéndolos en tiempo real desde:
+La API Unificada centraliza el acceso a los datos de clientes, sensores y lecturas, obteniéndolos en tiempo real desde:
 
 - CRM (clientes y pedidos)  
 - IoT (sensores y lecturas)  
 
-El servicio unifica la información, valida la respuesta contra un **JSON Schema unificado** y la expone a clientes externos (Postman, web, dashboards, etc.).
+El servicio unifica la información, valida la respuesta contra un JSON Schema unificado y la expone a clientes externos.
 
 **Objetivos principales:**
 
@@ -28,8 +28,8 @@ El servicio unifica la información, valida la respuesta contra un **JSON Schema
 
 - **Descripción:** Devuelve la lista de clientes enriquecidos con sensores asociados y sus lecturas.  
 - **Parámetros query:**  
-  - `page` (opcional) → número de página  
-  - `pageSize` (opcional) → tamaño de página  
+  - `page` (opcional) -> número de página  
+  - `pageSize` (opcional) -> tamaño de página  
 
 ---
 
@@ -54,8 +54,8 @@ El servicio unifica la información, valida la respuesta contra un **JSON Schema
 
 ## 4. Validación
 
-- Todas las respuestas se validan con **AJV** y el **JSON Schema unificado** (`/schemas/unified.schemas.json`).  
-- Si algún objeto no cumple el schema, se devuelve **HTTP 500** con detalle de errores.
+- Todas las respuestas se validan con AJV y el JSON Schema unificado (`/schemas/unified.schemas.json`).  
+- Si algún objeto no cumple el schema, se devuelve HTTP 500 con detalle de errores.
 
 ---
 
@@ -68,7 +68,7 @@ El servicio unifica la información, valida la respuesta contra un **JSON Schema
 
 ### 5.1 Test automáticos en Postman
 
-Se añadieron **tests en Postman** para validar:
+Se añadieron tests en Postman para validar:
 
 - Test de estado HTTP
         pm.test("Status code is 200", function () {
