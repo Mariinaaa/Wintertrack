@@ -33,7 +33,11 @@ npm install
 ## Ejecutar en desarrollo
 npm run dev
 
-## Endpoints
-- GET /api/clientes/detalle  -> lista clientes con sensores y lecturas
-- GET /api/resumen          -> resumen estadístico
+## Ejemplos de comprobaciones
+
+Listado completo de clientes enriquecidos:
+http://localhost:4000/clientes/detalle
+
+Resumen de ubicaciones con clientes, sensores y total de lecturas:
+http://localhost:4000/resumen
 
