@@ -2,14 +2,14 @@
 	"info": {
 		"_postman_id": "b21c0f8b-ef25-49f2-abac-c786f56a23f5",
 		"name": "postman_collection_api",
-		"description": "Colección para probar la API Unificada (clientes y resumen) según el Tema 3.",
+		"description": "Colección para probar la API Unificada.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "48334929",
 		"_collection_link": "https://amaya-marina2004-9685346.postman.co/workspace/Marina-Amaya's-Workspace~3ce38917-119f-46b7-8099-0622b0f1371f/collection/48334929-b21c0f8b-ef25-49f2-abac-c786f56a23f5?action=share&source=collection_link&creator=48334929"
 	},
 	"item": [
 		{
-			"name": "GET Clientes Detalle",
+			"name": "GET Clientes detalle",
 			"event": [
 				{
 					"listen": "test",
@@ -62,7 +62,7 @@
 			"response": []
 		},
 		{
-			"name": "GET Clientes Detalle",
+			"name": "GET Clientes detalle",
 			"event": [
 				{
 					"listen": "prerequest",
