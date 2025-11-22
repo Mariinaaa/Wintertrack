@@ -1,0 +1,10 @@
+# Node.js
+node_modules/
+.env
+npm-debug.log*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.env
