@@ -1,3 +1,24 @@
+/* 
+======================================================================================
+Nombre : index.js
+Descripción: Punto de entrada de la API CRM. Gestiona las rutas de clientes y pedidos,
+             lectura de ficheros JSON, validación mediante AJV y paginación de datos.
+
+Detalle: Este archivo incluye:
+         - Carga y compilación de schemas con AJV
+         - Rutas GET /clientes y /clientes/:id
+         - Rutas GET /pedidos y /pedidos/:id
+         - Filtros, búsqueda, paginación y validación individual de registros
+
+---------------------------------------------------------------------------
+HISTÓRICO DE CAMBIOS:
+ISSUE         AUTOR        FECHA          DESCRIPCIÓN
+--------      ---------    ----------     --------------------------------------------
+I001          Marina       14-11-2025     Creación del archivo index.js
+
+======================================================================================
+*/
+
 const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
@@ -21,7 +42,25 @@ const pedidoSchema = JSON.parse(fs.readFileSync("../../schemas/pedido.schema.jso
 const validateCliente = ajv.compile(clienteSchema);
 const validatePedido = ajv.compile(pedidoSchema);
 
-// RUTA: GET /clientes
+/* 
+======================================================================================
+Nombre : ruta_get_clientes
+Descripcion: Devuelve todos los clientes con filtros opcionales de búsqueda y paginación,
+             validando cada registro con el schema de cliente.
+
+Detalle:
+  Parámetros de consulta:
+    - q          : string | opcional -> texto a buscar en nombre o email
+    - ubicacionId: string | opcional -> filtra por ubicación
+    - page       : number | opcional -> página de resultados (default 1)
+    - pageSize   : number | opcional -> tamaño de página (default 25)
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -------------------------------
+I001          Marina             14-11-2025              Creación de la ruta GET /clientes
+======================================================================================
+*/
 app.get("/clientes", (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync("./data/clientes.json", "utf-8"));
@@ -74,7 +113,20 @@ app.get("/clientes", (req, res) => {
 });
 
 
-// RUTA: GET /clientes/:id
+/* 
+======================================================================================
+Nombre : ruta_get_cliente_por_id
+Descripcion: Devuelve un cliente específico según su clienteId, validando con schema.
+Detalle:
+  Parámetros de ruta:
+    - id : string -> ID del cliente a recuperar
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -------------------------------
+I001          Marina             14-11-2025              Creación de la ruta GET /clientes/:id
+======================================================================================
+*/
 app.get("/clientes/:id", (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync("./data/clientes.json", "utf-8"));
@@ -96,7 +148,24 @@ app.get("/clientes/:id", (req, res) => {
 });
 
 
-// RUTA: GET /pedidos
+/* 
+======================================================================================
+Nombre : ruta_get_pedidos
+Descripcion: Devuelve todos los pedidos con filtros opcionales de cliente, estado y paginación,
+             validando cada registro con el schema de pedido.
+Detalle:
+  Parámetros de consulta:
+    - clienteId: string | opcional -> filtra pedidos de un cliente
+    - estado   : string | opcional -> filtra por estado del pedido
+    - page     : number | opcional -> página de resultados (default 1)
+    - pageSize : number | opcional -> tamaño de página (default 25)
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -------------------------------
+I001          Marina             14-11-2025              Creación de la ruta GET /pedidos
+======================================================================================
+*/
 app.get("/pedidos", (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync("./data/pedidos.json", "utf-8"));
@@ -144,7 +213,20 @@ app.get("/pedidos", (req, res) => {
 });
 
 
-// RUTA: GET /pedidos/:id
+/* 
+======================================================================================
+Nombre : ruta_get_pedido_por_id
+Descripcion: Devuelve un pedido específico según su pedidoId, validando con schema.
+Detalle:
+  Parámetros de ruta:
+    - id : string -> ID del pedido a recuperar
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -------------------------------
+I001          Marina             14-11-2025              Creación de la ruta GET /pedidos/:id
+======================================================================================
+*/
 app.get("/pedidos/:id", (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync("./data/pedidos.json", "utf-8"));
