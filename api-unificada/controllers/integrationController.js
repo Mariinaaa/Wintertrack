@@ -1,3 +1,21 @@
+/* 
+======================================================================================
+Nombre : integrationController.js
+Descripcion: Controlador de integración. Contiene funciones para construir datos 
+             enriquecidos de clientes y generar resúmenes de sensores y lecturas.
+Detalle: Funciones incluidas:
+        - buildClienteEnriquecido(cliente, pedidosCliente, sensoresUbicacion, lecturasPorSensor)
+        - getClientesDetalle(req, res)
+        - getResumen(req, res)
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -----------------------------------------------
+I001          Marina             22-11-2025              Creación del controlador con funciones principales
+======================================================================================
+*/
+
 const { fetchJson } = require("../lib/httpClient");
 const { validateCliente } = require("../lib/validator");
 
@@ -5,8 +23,24 @@ const CRM_BASE = "http://localhost:3001";
 const IOT_BASE = "http://localhost:8000";
 
 /* --------------------------------------------------
-   Construir cliente enriquecido
------------------------------------------------------*/
+   buildClienteEnriquecido
+-----------------------------------------------------
+Descripcion: Construye un objeto cliente enriquecido con datos de pedidos y sensores.
+Detalle: 
+Parametros:
+    cliente: objeto con datos básicos del cliente
+    pedidosCliente: array de pedidos asociados al cliente
+    sensoresUbicacion: array de sensores de la ubicación del cliente
+    lecturasPorSensor: array de lecturas asociadas a los sensores
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -----------------------------------------------
+I001          Marina             22-11-2025              Creación de la función buildClienteEnriquecido
+======================================================================================
+*/
+
 function buildClienteEnriquecido(cliente, pedidosCliente, sensoresUbicacion, lecturasPorSensor) {
     return {
         clienteId: cliente.clienteId,
@@ -31,8 +65,22 @@ function buildClienteEnriquecido(cliente, pedidosCliente, sensoresUbicacion, lec
 }
 
 /* ========================================================
-   ===============   DETALLE CLIENTES   ====================
-   ======================================================== */
+   getClientesDetalle
+========================================================
+Descripcion: Devuelve listado detallado de clientes con sus
+             pedidos y lecturas de sensores, validando con AJV.
+Parametros:
+    req: objeto de petición
+    res: objeto de respuesta
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -----------------------------------------------
+I001          Marina             22-11-2025              Creación de la función getClientesDetalle
+======================================================================================
+*/
+
 async function getClientesDetalle(req, res) {
     const clientesResp = await fetchJson(`${CRM_BASE}/clientes?page=1&pageSize=200`);
     if (!clientesResp.ok)
@@ -95,8 +143,21 @@ async function getClientesDetalle(req, res) {
 }
 
 /* ========================================================
-   ===================== RESUMEN ==========================
-   ======================================================== */
+   getResumen
+========================================================
+Descripcion: Genera un resumen por ubicación de clientes, sensores y lecturas.
+Parametros:
+    req: objeto de petición
+    res: objeto de respuesta
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -----------------------------------------------
+I001          Marina             22-11-2025              Creación de la función getResumen
+======================================================================================
+*/
+
 async function getResumen(req, res) {
     const clientesResp = await fetchJson(`${CRM_BASE}/clientes?page=1&pageSize=200`);
     if (!clientesResp.ok)

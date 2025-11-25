@@ -1,3 +1,20 @@
+/* 
+======================================================================================
+Nombre : app.js
+Descripcion: Archivo principal de la API. Configura el servidor Express, aplica middleware
+             y define las rutas de la API unificada.
+Detalle: Configura CORS, JSON parser, define puerto y rutas:
+        - GET /clientes/detalle -> getClientesDetalle
+        - GET /resumen -> getResumen
+---------------------------------------------------------------------------
+HISTORICO DE CAMBIOS:
+
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         -----------------------------------------------
+I001          Marina             22-11-2025              Creación de app.js con configuración básica de Express
+======================================================================================
+*/
+
 const express = require("express");
 const cors = require("cors");
 
