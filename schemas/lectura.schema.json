@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Lectura de Sensor",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "sensorId": {
+            "type": "string"
+        },
+        "valor": {
+            "type": "number"
+        },
+        "unidad": {
+            "type": "string"
+        },
+        "timestamp": {
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": [
+        "id",
+        "sensorId",
+        "valor",
+        "unidad",
+        "timestamp"
+    ]
+}
