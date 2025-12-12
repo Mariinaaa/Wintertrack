@@ -1,0 +1,20 @@
+[
+    {
+        "id": "REM-TS01",
+        "tipo": "aforo",
+        "ubicacionId": "ZonaPrincipiantes",
+        "estadoOperacional": "Operativo"
+    },
+    {
+        "id": "REM-TC02",
+        "tipo": "vibracion",
+        "ubicacionId": "ZonaExpertos",
+        "estadoOperacional": "Operativo"
+    },
+    {
+        "id": "REM-TS01-TEMP",
+        "tipo": "temperatura",
+        "ubicacionId": "ZonaPrincipiantes",
+        "estadoOperacional": "Operativo"
+    }
+]
