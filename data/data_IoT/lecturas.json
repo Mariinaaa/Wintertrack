@@ -1,0 +1,107 @@
+[
+    {
+        "id": "LEC-AF-001",
+        "sensorId": "REM-TS01",
+        "valor": 150,
+        "unidad": "personas",
+        "timestamp": "2025-10-16T10:00:00Z"
+    },
+    {
+        "id": "LEC-VIB-001",
+        "sensorId": "REM-TC02",
+        "valor": 0.5,
+        "unidad": "mm/s",
+        "timestamp": "2025-10-16T10:01:00Z"
+    },
+    {
+        "id": "LEC-TEMP-001",
+        "sensorId": "REM-TS01-TEMP",
+        "valor": -2.5,
+        "unidad": "°C",
+        "timestamp": "2025-10-16T10:02:00Z"
+    },
+    {
+        "id": "LEC-AF-002",
+        "sensorId": "REM-TS01",
+        "valor": 155,
+        "unidad": "personas",
+        "timestamp": "2025-10-16T10:05:00Z"
+    },
+    {
+        "id": "LEC-AF-003",
+        "sensorId": "REM-TS01",
+        "valor": 160,
+        "unidad": "personas",
+        "timestamp": "2025-10-16T10:10:00Z"
+    },
+    {
+        "id": "LEC-AF-004",
+        "sensorId": "REM-TS01",
+        "valor": 158,
+        "unidad": "personas",
+        "timestamp": "2025-10-16T10:15:00Z"
+    },
+    {
+        "id": "LEC-AF-005",
+        "sensorId": "REM-TS01",
+        "valor": 162,
+        "unidad": "personas",
+        "timestamp": "2025-10-16T10:20:00Z"
+    },
+    {
+        "id": "LEC-VIB-002",
+        "sensorId": "REM-TC02",
+        "valor": 0.7,
+        "unidad": "mm/s",
+        "timestamp": "2025-10-16T10:05:00Z"
+    },
+    {
+        "id": "LEC-VIB-003",
+        "sensorId": "REM-TC02",
+        "valor": 0.6,
+        "unidad": "mm/s",
+        "timestamp": "2025-10-16T10:10:00Z"
+    },
+    {
+        "id": "LEC-VIB-004",
+        "sensorId": "REM-TC02",
+        "valor": 0.8,
+        "unidad": "mm/s",
+        "timestamp": "2025-10-16T10:15:00Z"
+    },
+    {
+        "id": "LEC-VIB-005",
+        "sensorId": "REM-TC02",
+        "valor": 0.5,
+        "unidad": "mm/s",
+        "timestamp": "2025-10-16T10:20:00Z"
+    },
+    {
+        "id": "LEC-TEMP-002",
+        "sensorId": "REM-TS01-TEMP",
+        "valor": -2.0,
+        "unidad": "°C",
+        "timestamp": "2025-10-16T10:07:00Z"
+    },
+    {
+        "id": "LEC-TEMP-003",
+        "sensorId": "REM-TS01-TEMP",
+        "valor": -1.5,
+        "unidad": "°C",
+        "timestamp": "2025-10-16T10:12:00Z"
+    },
+    {
+        "id": "LEC-TEMP-004",
+        "sensorId": "REM-TS01-TEMP",
+        "valor": -1.8,
+        "unidad": "°C",
+        "timestamp": "2025-10-16T10:17:00Z"
+    },
+    {
+        "id": "LEC-TEMP-005",
+        "sensorId": "REM-TS01-TEMP",
+        "valor": -2.2,
+        "unidad": "°C",
+        "timestamp": "2025-10-16T10:22:00Z"
+    }
+]
